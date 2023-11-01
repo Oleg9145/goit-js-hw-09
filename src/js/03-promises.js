@@ -7,11 +7,6 @@ form.addEventListener('submit', async e => {
   e.preventDefault();
   const amount = parseInt(amountInput.value, 10);
 
-  if (isNaN(amount)) {
-    Notiflix.Notify.Failure('Будь ласка, введіть коректну кількість промісів.');
-    return;
-  }
-
   for (let i = 1; i <= amount; i++) {
     const delay = 1000 + i * 500;
     createPromise(i, delay)
